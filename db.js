@@ -1,9 +1,7 @@
 const Mongoose = require("mongoose")
 
-const localDB = `mongodb+srv://bmartindaniel:mnjXeklwdTFZG9nH@cluster0.0ga9cxs.mongodb.net/test`
-
 const connectDB = async () => {
-  await Mongoose.connect(localDB, {
+  await Mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
